@@ -1,0 +1,11 @@
+.three-dots{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.quote_card:hover{
+  .quote_delete_icon{
+    color:#881337;
+    pointer-events: auto;
+  }
+}

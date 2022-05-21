@@ -1,0 +1,17 @@
+<html lang="">
+<head>
+
+</head>
+  <body class="bg-orange-400" style="background-color: rgb(251, 146, 60);">
+  <div class="h-full w-full bg-orange-400 py-4" style="background-color: rgb(251, 146, 60);height: 100%;width: 100%;padding-top: 1rem;padding-bottom: 1rem;">
+    <h1 class="mx-auto w-fit font-bold text-white" style="margin: 0 auto;width: fit-content;font-weight: bold;color: white;">Your Liked Quotes</h1>
+    <div class="bg-white w-34 mt-2 mx-auto rounded-lg" style="margin: 0 auto;margin-top: 0.5rem;background-color: white;width: 75%;border-radius: 0.5rem;">
+        {%for quote in quotes: %}
+        <div class="py-1 px-4" style="padding-left: 1rem;padding-right: 1rem;padding-top: 0.25rem;padding-bottom: 0.25rem;">
+            "{{quote['quote']}}" - <span class="font-bold" style="font-weight: bold;">{{quote['author']}}</span>
+        </div>
+        {% endfor %}
+    </div>
+      </div>
+  </body>
+</html>

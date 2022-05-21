@@ -1,0 +1,76 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <link rel="stylesheet" href="styles.css"/>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Quotes App</title>
+</head>
+<body class="bg-orange">
+    <div>
+        <div class="md:w-3/4 w-11/12 md:h-1/2 h-3/5  bg-white mx-auto md:translate-y-1/4 translate-y-[15%] rounded-2xl">
+            <img id="author" alt="" src="" class="h-1/2 md:translate-y-[-30%] translate-y-[-20%] mx-auto border-4 border-orange rounded-md bg-white"/>
+            <div class="mx-auto absolute md:top-1/2 top-[62%] font-PT-Sans left-1/2 translate-x-[-50%] translate-y-[-50%] w-full">
+                <div id="quote" class="text-center text-xl font-bold w-full px-8"></div>
+            </div>
+            <div class="absolute bottom-0 translate-y-[-50%] left-1/2 translate-x-[-50%] w-28 flex justify-between">
+                <div>
+                <button id="next_quote_button" class="material-symbols-outlined text-4xl w-fit icon-button hover:text-dark-blue" pys-onClick="get_quote"
+                >
+                    next_plan
+                </button>
+                </div>
+                <div>
+                <button id="add_quote_button" class="material-symbols-outlined text-4xl w-fit icon-button hover:text-yellow" pys-onClick="add_quote_button">
+                    archive
+                </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-1/3 h-1/5 md:h-1/4  bg-white mt-10 left-1/2 translate-x-[-50%] absolute bottom-10 min-w-[24rem]">
+            <div class="bg-gray-200 py-1 h-1/6">
+                <form class="grid grid-cols-8 my-auto px-2" onsubmit="event.preventDefault()">
+                    <input id="email_input" required type="email" class="bg-gray-100 col-span-6 w-full focus:outline-none px-3"  placeholder="your email"/>
+                    <button id="send_email" pys-onClick="send_email"  class="uppercase text-sm col-span-2 bg-gray-100 font-PT-Sans font-semibold text-gray-600">Send Quotes</button>
+                </form>
+                </div>
+            <div id="selected_quotes_list" class="h-5/6 py-2 overflow-y-auto">
+
+            </div>
+            <div id="request-status" class="lowercase mx-auto w-fit text-sm bottom-5 relative"></div>
+        </div>
+    </div>
+<py-script src="./script.py">
+
+</py-script>
+    <script>
+	    tailwind.config = {
+		    theme: {
+			    extend: {
+				    colors: {
+					    orange: '#F39237',
+                        yellow:'#F9B700',
+                        'dark-blue':'#183153'
+				    },
+				    fontFamily:{
+						'PT-Sans':['PT Sans', 'sans-serif']
+                    },
+                    outline:{
+                      'none':'none'
+                    }
+			    }
+		    }
+	    }
+    </script>
+<style type="text/tailwindcss">
+    .icon-button{
+        @apply hover:cursor-pointer transition-all duration-200 ease-in-out hover:scale-90
+    }
+  </style>
+</body>
+</html>
